@@ -1,0 +1,168 @@
+/* PortHound - Animations */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Apply animations to elements */
+.scanner-card {
+    animation: fadeInUp 0.6s ease;
+}
+
+.mode-card {
+    animation: fadeInUp 0.6s ease;
+}
+
+.mode-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.mode-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.mode-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.mode-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.finding-item {
+    animation: slideInRight 0.5s ease;
+}
+
+.finding-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.finding-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.finding-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.scan-button:hover .button-icon {
+    animation: bounce 0.5s ease infinite;
+}
+
+.warning-banner {
+    animation: fadeInDown 0.5s ease;
+}
+
+/* Loading spinner */
+.spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s linear infinite;
+}
+
+/* Pulse animation for active elements */
+.phase-card.active {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* Terminal cursor blink */
+.terminal-cursor {
+    animation: blink 1s step-end infinite;
+}
+
+/* Progress bar shimmer effect */
+.progress-bar {
+    background: linear-gradient(90deg, 
+        var(--primary-color) 0%, 
+        var(--secondary-color) 50%, 
+        var(--primary-color) 100%);
+    background-size: 200% 100%;
+    animation: shimmer 2s linear infinite;
+}
